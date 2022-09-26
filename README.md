@@ -1,7 +1,8 @@
 # AI-Tech-4th_RecSys-13_Algorithm-Study
 **AI Tech 4기 추천시스템 트랙 13조 '취향존중'의 알고리즘 스터디**  
   
-매주 정해진 알고리즘 카테고리에서, 지정된 공통문제 1개와 자유문제 1개 이상을 풀고,  
+매주 정해진 알고리즘 카테고리 안에서,  
+지정된 공통문제 2개와 풀고싶은 문제들을 자유롭게 풀고    
 차주 첫 피어세션에서 공통문제에 대한 코드리뷰 진행.  
 
 ## Week 1
@@ -12,7 +13,8 @@
 ## Week 2
 - 알고리즘: Implementation
 - 마감기한: 22/10/04 Tue 16:00
-- 공통문제 : TBD
+- 공통문제: [BOJ 2174번 로봇 시뮬레이션](https://www.acmicpc.net/problem/2174), 
+[BOJ 14499번 주사위 굴리기](https://www.acmicpc.net/problem/14499)
 
 ## Week 3
 - 알고리즘: DFS/BFS
