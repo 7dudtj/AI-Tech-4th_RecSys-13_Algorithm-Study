@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-public class Main{
+public class boj_1781{
     public static void main(String[] args) throws IOException{
 
         // set needed variables
