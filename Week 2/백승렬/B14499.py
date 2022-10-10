@@ -13,7 +13,7 @@ dice_h = deque([0, 0, 0])
 dir = {1: (0, 1), 2: (0, -1), 3: (-1, 0), 4: (1, 0)}
 
 
-def rotate(d):
+def dice_rotate(d):
     if d == 1:
         dice_v[1] = dice_h[0]
         temp = dice_v.pop()
@@ -34,30 +34,12 @@ def rotate(d):
         dice_v.rotate(1)
         dice_h[1] = dice_v[1]
 
-
-def move(d, x, y):
-    a, b = dir[d]
-    next_x, next_y = x + a, y + b
-
-    if 0 <= next_x < N and 0 <= next_y < M:
-        rotate(d)
-        if board[next_x][next_y]:
-            dice_v[3] = board[next_x][next_y]
-            board[next_x][next_y] = 0
-        else:
-            board[next_x][next_y] = dice_v[3]
-
-        return next_x, next_y
-    else:
-        return x, y
-
-
 for n in comms:
     a, b = dir[n]
     next_x, next_y = x + a, y + b
 
     if 0 <= next_x < N and 0 <= next_y < M:
-        rotate(n)
+        dice_rotate(n)
         if board[next_x][next_y]:
             dice_v[3] = board[next_x][next_y]
             board[next_x][next_y] = 0

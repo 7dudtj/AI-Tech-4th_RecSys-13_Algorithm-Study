@@ -3,7 +3,7 @@
   
 매주 정해진 알고리즘 카테고리 안에서,  
 지정된 공통문제 2개와 풀고싶은 문제들을 자유롭게 풀고    
-차주 첫 피어세션에서 공통문제에 대한 코드리뷰 진행.  
+차주 코드리뷰 피어세션에서 공통문제에 대한 코드리뷰를 진행.  
 
 ## Week 1
 - 알고리즘: Greedy
@@ -18,30 +18,31 @@
 
 ## Week 3
 - 알고리즘: DFS/BFS
-- 마감기한: 22/10/11 Tue 16:00
-- 공통문제: TBD
+- 마감기한: 22/10/12 Wed 16:00
+- 공통문제: [BOJ 3055번 탈출](https://www.acmicpc.net/problem/3055), 
+[BOJ 2250번 트리의 높이와 너비](https://www.acmicpc.net/problem/2250)
 
 ## Week 4
 - 알고리즘: Sort
-- 마감기한: 22/10/17 Mon 16:00
+- 마감기한: TBD
 - 공통문제: TBD
 
 ## Week 5
 - 알고리즘: Binary Search
-- 마감기한: TBD (Offline day)
+- 마감기한: TBD
 - 공통문제: TBD
 
 ## Week 6
 - 알고리즘: DP
-- 마감기한: 22/10/31 Mon 16:00
-- 공통문제 : TBD
+- 마감기한: TBD
+- 공통문제: TBD
 
 ## Week 7
 - 알고리즘: Shortest Path
-- 마감기한: 22/11/07 Mon 16:00
+- 마감기한: TBD
 - 공통문제: TBD
 
 ## Week 8
 - 알고리즘: Graph Theory
-- 마감기한: TBD (Last week of Lv 1)
+- 마감기한: TBD
 - 공통문제: TBD
