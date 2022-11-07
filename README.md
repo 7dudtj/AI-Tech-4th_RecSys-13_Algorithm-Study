@@ -36,14 +36,14 @@
 ## Week 6
 - 알고리즘: DP
 - 마감기한: 22/11/04 FRI 10:00
-- 공통문제: [BOJ 2293 동전 1](https://www.acmicpc.net/problem/2293)
+- 공통문제: [BOJ 2293번 동전 1](https://www.acmicpc.net/problem/2293)
 
 ## Week 7
 - 알고리즘: Shortest Path
-- 마감기한: TBD
-- 공통문제: TBD
+- 마감기한: 22/11/07 Mon 16:00
+- 공통문제: [BOJ 18352번 특정 거리의 도시 찾기](https://www.acmicpc.net/problem/18352)
 
 ## Week 8
 - 알고리즘: Graph Theory
-- 마감기한: TBD
-- 공통문제: TBD
+- 마감기한: 22/11/09 Wed 16:00
+- 공통문제: [BOJ 2665번 미로만들기](https://www.acmicpc.net/problem/2665)
