@@ -1,1 +1,29 @@
-코드를 업로드 하신 후, 이 파일은 지워주세요!
+import sys
+from collections import defaultdict
+from heapq import heappop, heappush
+
+N,M,K,X = map(int, sys.stdin.readline().split())
+graph = defaultdict(list)
+
+for _ in range(M):
+    a,b = map(int, sys.stdin.readline().split())
+    graph[a].append(b)
+
+dist = [300000]*(N+1)
+q = [(0,X)]
+dist[X] = 0
+
+while q:
+    d, curr = heappop(q)
+    for next in graph[curr]:
+        if d+1 < dist[next] and d+1 <= K:
+            dist[next] = d+1
+            heappush(q,(d+1, next))
+
+ans = [idx for idx,d in enumerate(dist) if d==K]
+
+if ans:
+    for a in ans:
+        print(a)
+else:
+    print(-1)
