@@ -1,66 +1,61 @@
-def covert_xy(i) :
-    return i // 100, i % 100
-def covert_int(row, col) :
-    return row * 100 + col
+def passable(maps, n) :
+    start = [0]
+    route = [0]
+    while True :
+        temp = []
+        movable = False
+        for s in start :
+            row, col = s // 100, s % 100
+            if maps[row][col] == 1 :
+                if row > 0 and maps[row-1][col] == 1 :
+                    num = (row-1)*100+col
+                    if num not in route :
+                        temp.append(num)
+                    movable = True
+                if row < n-1 and maps[row+1][col] == 1 :
+                    num = (row+1)*100+col
+                    if num not in route :
+                        temp.append(num)
+                    movable = True
+                if col > 0 and maps[row][col-1] == 1 :
+                    num = row*100+col-1
+                    if num not in route :
+                        temp.append(num)
+                    movable = True
+                if col < n-1 and maps[row][col+1] == 1 :
+                    num = row*100+col+1
+                    if num not in route :
+                        temp.append(num)
+                    movable = True
 
-def surround(pos, n) :
-    a = []
-    for p in pos :
-        row, col = covert_xy(p)
-        if row < n-1 :
-            temp = covert_int(row+1, col)
-            if temp not in pos :
-                a.append(temp)
-        if col < n-1 :
-            temp = covert_int(row, col+1)
-            if temp not in pos :
-                a.append(temp)
-        if row > 0 :
-            temp = covert_int(row-1, col)
-            if temp not in pos :
-                a.append(temp)
-        if col > 0 :
-            temp = covert_int(row, col-1)
-            if temp not in pos :
-                a.append(temp)
-    a = list(set(a))
-    return a
+        if (n-1)*100 + n-1 in route :
+            return True
+
+        if not movable :
+            return False
+
+        route.extend(temp)
+        start = temp
 
 n = int(input())
 maps = [[int(i) for i in input().split()] for j in range(n)]
-start = maps[0][0]
-pos = [0]
-min_n = maps[0][0]
-max_n = maps[0][0]
-end = covert_int(n-1, n-1)
-while True :
-    temp_answer = 1000
-    temp_c = 1000
-    next_pos = surround(pos, n)
-    next_row, next_col = 0, 0
-    for p in next_pos :
-        row, col = covert_xy(p)
-        next_step = maps[row][col]
-        if min_n < next_step and next_step < max_n :
-            pos.append(covert_int(row, col))
+min_num = min([min(row) for row in maps])
+max_num = max([max(row) for row in maps])
+length = max_num - min_num
+start_num = maps[0][0]
+end_num = maps[n-1][n-1]
+for i in range(abs(start_num - end_num), length+1) :
+    for j in range(min(i, start_num - min_num)+1) :
+        top = i - j
+        boundary = range(start_num-j, start_num+top+1)
+        temp = [[1 if i in boundary else 0 for i in row]for row in maps]
+        if temp[n-1][n-1] == 0 :
+            continue
+
+        if passable(temp, n) :
+            print(i)
             break
-        coverage = max(max_n, next_step) - min(min_n, next_step)
-        c = abs(next_step - start)
-        if temp_answer > coverage :
-            temp_answer = coverage
-            temp_c = c
-            next_row, next_col = row, col
-        elif temp_answer == coverage :
-            if temp_c > c :
-                temp_answer = coverage
-                temp_c = c
-                next_row, next_col = row, col
     else :
-        pos.append(covert_int(next_row, next_col))
-        next_num = maps[next_row][next_col]
-        max_n, min_n = max(max_n, next_num), min(min_n, next_num)
-    
-    if end in pos :
-        break
-    
-print(max_n - min_n)
+        continue
+
+    break
